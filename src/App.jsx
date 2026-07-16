@@ -48,7 +48,7 @@ function App() {
       setTemperature(null);
       setHumidity(null);
       setWindSpeed(null);
-      setWeatherIcon("01d");
+      setWeatherIcon(null);
     }
     setLoading(false);
   };
@@ -98,7 +98,7 @@ function App() {
           : "--"}
       </h1>
       <h2 className="text-2xl mt-2 font-semibold">
-        {cityName || "Type to check temperature"}
+        {cityName || "Type to fetch weather"}
       </h2>
 
       {/* Humidity & Wind Speed */}
