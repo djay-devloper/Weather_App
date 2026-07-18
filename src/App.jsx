@@ -63,7 +63,7 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-blue-950 to-black text-white">
       <h1 className="my-12 text-gray-200 font-semibold text-2xl">Weather App</h1>
-      
+    
       {/* Search bar & icon */}
       <div className="flex items-center bg-white rounded-full px-4 py-2 mb-6 w-80 shadow-lg">
         <input
