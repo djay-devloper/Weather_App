@@ -1,16 +1,21 @@
-# React + Vite
+# Weatherly
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive weather dashboard built with React and Vite. It includes current conditions, three-hour and five-day forecasts, an explainable outdoor-window recommendation, city suggestions, browser geolocation, Celsius/Fahrenheit controls, side-by-side city comparisons, and forecast-based severe-weather notifications.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Create an OpenWeatherMap API key with access to Current Weather, 5 Day / 3 Hour Forecast, and Geocoding.
+2. Copy `.env.sample` to `.env` and set `VITE_API_KEY` to your key.
+3. Install dependencies with `npm install`.
+4. Start the development server with `npm run dev`.
 
-## React Compiler
+The API key is used by browser-side requests and is visible to users of a deployed site. Use a server-side proxy if the key must remain private.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
 
-## Expanding the Oxlint configuration
+- `npm run dev` — start the development server
+- `npm run lint` — lint the project
+- `npm run build` — create a production build
+- `npm run preview` — preview the production build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The outdoor-window recommendation ranks the next 24 hours of three-hour forecast periods using temperature, precipitation probability, wind, and severe condition codes. It is a general planning estimate, not a safety advisory. Severe-weather notices are also estimates, not official emergency alerts. Browser notifications require explicit permission.
